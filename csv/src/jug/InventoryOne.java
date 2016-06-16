@@ -13,7 +13,7 @@ public class InventoryOne implements Inventory {
     public Map<String, List<String>> from(List<String[]> parsedCSV) {
         return parsedCSV.stream()
                 .collect(ArrayList<String[]>::new,
-                        (acc, e) ->  acc.add(normalizeElement(acc,e)),
+                        (acc, e) -> acc.add(normalizeElement(acc, e)),
                         (acc1, acc2) -> acc1.addAll(acc2)).stream()
                 .collect(Collectors.groupingBy(k -> k[0], mapping(v -> v[1], toList())));
     }

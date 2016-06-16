@@ -19,7 +19,7 @@ public class InventoryOne implements Inventory {
     }
 
     public String[] normalizeElement(List<String[]> acc, String[] e) {
-        e[0] = e[0] == null ? acc.get(acc.size() - 1)[0] : e[0];
+        e[0] = (e[0] == null) || e[0].isEmpty() ? acc.get(acc.size() - 1)[0] : e[0];
         return e;
     }
 }

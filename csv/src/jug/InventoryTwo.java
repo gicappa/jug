@@ -14,7 +14,7 @@ public class InventoryTwo implements Inventory {
         return parsedCSV.stream()
                 .collect(LinkedMap::new,
                         (acc, e) -> {
-                            if (e[0] == null) e[0] = (String) acc.lastKey();
+                            if (e[0] == null || e[0].isEmpty()) e[0] = (String) acc.lastKey();
 
                             List<String> values = (List<String>) acc.get(e[0]);
                             if (values == null) values = new ArrayList<>();

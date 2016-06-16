@@ -43,12 +43,12 @@ public class InventoriesSpec {
     public void it_transform_a_list_of_array_in_a_Map_of_String_and_ListString() {
         is.stream()
                 .forEach(i -> {
-                            System.out.println("\n\nTesting Implementation " + i.getClass());
+                            System.out.println("\n>---\nTesting Implementation " + i.getClass());
                             Map<String, List<String>> actual = i.from(parsedCSV());
 
                             assertThat(actual, is(expectedMap()));
 
-                            System.out.println("OK : actual = " + actual);
+                            System.out.println("OK : actual = " + actual + "\n---<");
                         }
                 );
     }

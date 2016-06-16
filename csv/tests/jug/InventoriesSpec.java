@@ -8,24 +8,29 @@ import java.util.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class InventorySpec {
+public class InventoriesSpec {
 
     private List<Inventory> is;
 
     @Before
     public void before() {
-        is = Arrays.asList(new InventoryOne(), new InventoryTwo());
+        is = Arrays.asList(
+                new InventoryOne(),
+                new InventoryTwo(),
+                new SimoneInventoryEasy(),
+                new SimoneInventoryComplex()
+        );
     }
 
     @Test
     public void it_transform_a_list_of_array_in_a_Map_of_String_and_ListString() {
         is.stream()
                 .forEach(i -> {
-                            System.out.println("Testing Implementation " + i.getClass());
+                            System.out.println("\n\nTesting Implementation " + i.getClass());
                             Map<String, List<String>> actual = i.from(csvFixture());
                             assertThat(actual, is(expectedMap()));
 
-                            System.out.println("actual = " + actual);
+                            System.out.println("OK : actual = " + actual);
                         }
                 );
 

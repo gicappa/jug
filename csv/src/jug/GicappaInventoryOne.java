@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.toList;
 
-public class InventoryOne implements Inventory {
+public class GicappaInventoryOne implements Inventory {
 
     public Map<String, List<String>> from(List<String[]> parsedCSV) {
         return parsedCSV.stream()

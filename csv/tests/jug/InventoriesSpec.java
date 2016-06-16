@@ -17,8 +17,9 @@ public class InventoriesSpec {
     @Before
     public void before() {
         is = Arrays.asList(
-                new InventoryOne(),
-                new InventoryTwo(),
+                new VincenzoInventory(),
+                new GicappaInventoryOne(),
+                new GicappaInventoryTwo(),
                 new SimoneInventoryEasy(),
                 new SimoneInventoryComplex()
         );

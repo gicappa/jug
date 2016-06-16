@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class InventoryTwo implements Inventory {
+public class GicappaInventoryTwo implements Inventory {
 
     public Map<String, List<String>> from(List<String[]> parsedCSV) {
         return parsedCSV.stream()

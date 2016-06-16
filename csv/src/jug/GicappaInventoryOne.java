@@ -11,7 +11,7 @@ import static java.util.stream.Collectors.toList;
 public class GicappaInventoryOne implements Inventory {
 
     public Map<String, List<String>> from(List<String[]> parsedCSV) {
-        return parsedCSV.stream()
+        return parsedCSV.stream().sequential()
                 .collect(ArrayList<String[]>::new,
                         (acc, e) -> acc.add(normalizeElement(acc, e)),
                         (acc1, acc2) -> acc1.addAll(acc2)).stream()

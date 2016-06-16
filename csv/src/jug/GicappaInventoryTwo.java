@@ -9,7 +9,7 @@ import java.util.Map;
 public class GicappaInventoryTwo implements Inventory {
 
     public Map<String, List<String>> from(List<String[]> parsedCSV) {
-        return parsedCSV.stream()
+        return parsedCSV.stream().sequential()
                 .collect(LinkedMap::new,
                         (acc, e) -> {
                             if (e[0] == null || e[0].isEmpty())
